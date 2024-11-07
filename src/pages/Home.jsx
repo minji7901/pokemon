@@ -3,14 +3,14 @@ import pikachuImg from "../assets/pikachuImg.png";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const LandingWrap = styled.div`
+const HomeWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   background: #2196f3;
 `;
-const LandingCont = styled.div`
+const HomeContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
@@ -19,33 +19,60 @@ const LandingCont = styled.div`
   box-shadow: 0 0 20px 5px rgb(255 255 255 / 20%);
   background: rgba(0, 0, 0, 0.1);
 `;
-const LandingContTbox = styled.div`
+const HomeContTextBox = styled.div`
   color: #fff;
   max-width: 400px;
   font-family: "Sour Gummy", sans-serif;
-  & h1 {
+  h1 {
     font-size: 2.625rem;
     word-break: keep-all;
   }
-  & p {
+  p {
     margin: 15px 0;
     color: #ddd;
     font-weight: 300;
     font-size: 1.25rem;
   }
-  & a {
-    display: inline-block;
-    padding: 10px 15px;
-    border-radius: 5px;
-    background: #F06292;
+  a {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background: #fff;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      border-bottom: 2px solid #000;
+      background: red;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 2px solid #000;
+      background-color: #fff;
+      transform: translate(-50%,-50%);
+    }
   }
 `;
 
 export default function Home() {
   return (
-    <LandingWrap>
-      <LandingCont>
-        <LandingContTbox>
+    <HomeWrapper>
+      <HomeContainer>
+        <HomeContTextBox>
           <h1>
             Welcome! <br />
             This place provides a Pokemon Pokédex.
@@ -54,9 +81,9 @@ export default function Home() {
             To view the Pokemon Pokédex, <br /> please click the button below.
           </p>
           <Link to="/dex">Getting started</Link>
-        </LandingContTbox>
+        </HomeContTextBox>
         <img src={pikachuImg} alt="pikachu" />
-      </LandingCont>
-    </LandingWrap>
+      </HomeContainer>
+    </HomeWrapper>
   );
 }

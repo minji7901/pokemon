@@ -1,5 +1,10 @@
 import React from "react";
+import PokemonDetail from "../components/PokemonDetail";
 
 export default function Detail() {
-  return <div>detail</div>;
+  return (
+    <div>
+      <PokemonDetail />
+    </div>
+  );
 }
