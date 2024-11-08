@@ -1,7 +1,7 @@
 import React from "react";
+import styled, { keyframes } from "styled-components";
 import pikachuImg from "../assets/pikachuImg.png";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { PokemonBall } from "../styles/PokemonBall";
 
 const HomeWrapper = styled.div`
   display: flex;
@@ -33,38 +33,29 @@ const HomeContTextBox = styled.div`
     font-weight: 300;
     font-size: 1.25rem;
   }
+`;
+const ballScale = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
+const HomeContLink = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  span {
+    color: #ddd;
+    font-size: 1.125rem;
+  }
   a {
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    width: 50px;
-    height: 50px;
-    overflow: hidden;
-    border: 2px solid #000;
-    border-radius: 50%;
-    background: #fff;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 50%;
-      border-bottom: 2px solid #000;
-      background: red;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      border: 2px solid #000;
-      background-color: #fff;
-      transform: translate(-50%,-50%);
-    }
+    margin: 0;
+    animation: ${ballScale} 1.5s infinite linear;
   }
 `;
 
@@ -80,7 +71,10 @@ export default function Home() {
           <p>
             To view the Pokemon Pokédex, <br /> please click the button below.
           </p>
-          <Link to="/dex">Getting started</Link>
+          <HomeContLink>
+            <span>Getting started →</span>
+            <PokemonBall to="/dex"></PokemonBall>
+          </HomeContLink>
         </HomeContTextBox>
         <img src={pikachuImg} alt="pikachu" />
       </HomeContainer>
