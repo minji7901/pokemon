@@ -10,7 +10,7 @@ const DashBoardContainer = styled.article`
   gap: 10px;
   grid-template-columns: repeat(6, 1fr);
 `;
-export default function DashBoard({ selected, setSelected }) {
+export default function DashBoard({ selected, setSelected, removePokemon }) {
   return (
     <DashBoardContainer>
       {selected.map((data) => (
@@ -19,6 +19,7 @@ export default function DashBoard({ selected, setSelected }) {
           data={data}
           selected={selected}
           setSelected={setSelected}
+          removePokemon={removePokemon}
         />
       ))}
     </DashBoardContainer>

@@ -24,13 +24,30 @@ const DexContent = styled.div`
 
 export default function Dex() {
   const [selected, setSelected] = useState([]);
+  
+  const handleaddClick = (e, data) => {
+    e.preventDefault();
+    if (selected.length > 5) {
+      return alert("초과!");
+    }
+    setSelected((prev) => [...prev, data]);
+  };
+
+  const handleRemoveClick = (e, data) => {
+    e.preventDefault();
+    setSelected((items) => items.filter((prev) => prev.id !== data.id));
+  };
 
   return (
     <DexContent>
       <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="logo" />
       <section>
-        <DashBoard selected={selected} setSelected={setSelected} />
-        <PokemonList selected={selected} setSelected={setSelected} />
+        <DashBoard
+          selected={selected}
+          setSelected={setSelected}
+          removePokemon={handleRemoveClick}
+        />
+        <PokemonList addPokemon={handleaddClick} />
       </section>
     </DexContent>
   );

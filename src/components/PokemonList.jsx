@@ -10,17 +10,11 @@ const PokemonListContainer = styled.div`
   gap: 20px;
 `;
 
-export default function PokemonList({ selected, setSelected }) {
+export default function PokemonList({ addPokemon }) {
   return (
     <PokemonListContainer>
       {pokemonData.map((data) => (
-        <PokemonCard
-          key={data.id}
-          data={data}
-          selected={selected}
-          setSelected={setSelected}
-          added
-        />
+        <PokemonCard key={data.id} data={data} addPokemon={addPokemon} added />
       ))}
     </PokemonListContainer>
   );
