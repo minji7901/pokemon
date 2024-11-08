@@ -8,19 +8,21 @@ const StyledLink = styled(Link)`
 export default function PokemonCard({ data, selected, setSelected, added }) {
   const { img_url, korean_name, description ,id } = data;
 
-  const handleaddClick = () => {
+  const handleaddClick = (e) => {
+    e.preventDefault();
     if (selected.length > 5) {
       return alert("초과!");
     }
     setSelected((prev) => [...prev, data]);
   };
 
-  const handleRemoveClick = () => {
+  const handleRemoveClick = (e) => {
+    e.preventDefault();
     setSelected((items) => items.filter((prev) => prev.id !== data.id));
   };
 
   return (
-    <StyledLink to={id}>
+    <StyledLink to={`/pokemon/${id}`}>
       <img src={img_url} alt={korean_name} />
       <strong>{korean_name}</strong>
       <p>{description}</p>
