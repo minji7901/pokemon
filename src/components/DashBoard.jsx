@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
+import { PokemonContext } from "../context/PokemonContext";
 
 const DashBoardContainer = styled.article`
   padding: 20px;
@@ -8,7 +9,7 @@ const DashBoardContainer = styled.article`
   background: #f5f5f5;
 `;
 const DashBoardNonText = styled.p`
-  color: #8BC34A;
+  color: #8bc34a;
   text-align: center;
   font-size: 1.5rem;
 `;
@@ -18,7 +19,8 @@ const DashBoardIsCont = styled.div`
   grid-template-columns: repeat(6, 1fr);
 `;
 
-export default function DashBoard({ selected, setSelected, removePokemon }) {
+export default function DashBoard() {
+  const { selected } = useContext(PokemonContext);
   return (
     <DashBoardContainer>
       {selected.length === 0 ? (
@@ -26,13 +28,7 @@ export default function DashBoard({ selected, setSelected, removePokemon }) {
       ) : (
         <DashBoardIsCont>
           {selected.map((data) => (
-            <PokemonCard
-              key={data.id}
-              data={data}
-              selected={selected}
-              setSelected={setSelected}
-              removePokemon={removePokemon}
-            />
+            <PokemonCard key={data.id} data={data} />
           ))}
         </DashBoardIsCont>
       )}
