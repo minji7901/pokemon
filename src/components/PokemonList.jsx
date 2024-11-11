@@ -14,11 +14,7 @@ export default function PokemonList() {
   return (
     <PokemonListContainer>
       {pokemonData.map((data) => (
-        <PokemonCard
-          key={data.id}
-          data={data}
-          added
-        />
+        <PokemonCard key={data.id} data={data} added />
       ))}
     </PokemonListContainer>
   );

@@ -21,6 +21,7 @@ const DashBoardIsCont = styled.div`
 
 export default function DashBoard() {
   const { selected } = useContext(PokemonContext);
+
   return (
     <DashBoardContainer>
       {selected.length === 0 ? (
