@@ -1,15 +1,12 @@
-import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "./index.css";
 import Header from "./components/Header";
-import { PokemonContext } from "./context/PokemonContext";
+import PokemonProvider from "./context/PokemonProvider";
 
 function App() {
-  const [selected, setSelected] = useState([]);
-
   return (
-    <PokemonContext.Provider value={{ selected, setSelected }}>
+    <PokemonProvider>
       <Header />
       <Outlet />
       <ToastContainer
@@ -23,7 +20,7 @@ function App() {
         draggable
         pauseOnHover
       />
-    </PokemonContext.Provider>
+    </PokemonProvider>
   );
 }
 

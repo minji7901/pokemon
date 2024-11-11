@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { StyledButton } from "../styles/StyledButton";
-import { PokemonContext } from "../context/PokemonContext";
+import { PokemonContext } from "../context/PokemonProvider";
 
 const StyledLink = styled(Link)`
   position: relative;

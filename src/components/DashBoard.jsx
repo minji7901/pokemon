@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
-import { PokemonContext } from "../context/PokemonContext";
+import { PokemonContext } from "../context/PokemonProvider";
 
 const DashBoardContainer = styled.article`
   padding: 20px;
