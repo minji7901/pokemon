@@ -5,13 +5,13 @@ function addPokemon(state, data) {
   const notifyDuplicate = () => toast("이미 선택된 포켓몬입니다.");
   const notifyNoChoice = () => toast("더 이상 선택할 수 없습니다.");
   if (state.selected.length > 5) {
-    notifyDuplicate();
+    notifyNoChoice();
     return state;
   }
 
   const isDuplicate = state.selected.some((prev) => prev.id === data.id);
   if (isDuplicate) {
-    notifyNoChoice();
+    notifyDuplicate();
     return state;
   }
 
