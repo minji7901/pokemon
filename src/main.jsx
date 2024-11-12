@@ -7,6 +7,7 @@ import Home from "./pages/Home.jsx";
 import Detail from "./pages/Detail.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import GlobalStyle from "./styles/GlobalStyle.js";
+import PokemonProvider from "./context/PokemonProvider.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,8 +28,8 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <>
+  <PokemonProvider>
     <GlobalStyle />
     <RouterProvider router={router} />
-  </>
+  </PokemonProvider>
 );

@@ -2,11 +2,10 @@ import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "./index.css";
 import Header from "./components/Header";
-import PokemonProvider from "./context/PokemonProvider";
 
 function App() {
   return (
-    <PokemonProvider>
+    <>
       <Header />
       <Outlet />
       <ToastContainer
@@ -20,7 +19,7 @@ function App() {
         draggable
         pauseOnHover
       />
-    </PokemonProvider>
+    </>
   );
 }
 
