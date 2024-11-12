@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
-import { PokemonContext } from "../context/PokemonContext";
+import { useSelector } from "react-redux";
 
 const DashBoardContainer = styled.article`
   padding: 20px;
@@ -20,7 +19,8 @@ const DashBoardIsCont = styled.div`
 `;
 
 export default function DashBoard() {
-  const { selected } = useContext(PokemonContext);
+  const selected = useSelector((state) => state.selected);
+  
   return (
     <DashBoardContainer>
       {selected.length === 0 ? (

@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { StyledButton } from "../styles/StyledButton";
-import { PokemonContext } from "../context/PokemonContext";
+import { useDispatch } from "react-redux";
 
 const StyledLink = styled(Link)`
   position: relative;
@@ -35,8 +34,16 @@ const StyledLink = styled(Link)`
   }
 `;
 export default function PokemonCard({ data, added }) {
-  const { handleaddClick, handleRemoveClick } = useContext(PokemonContext);
   const { img_url, korean_name, description, id } = data;
+  const dispatch = useDispatch();
+  const handleAddClick = (e) => {
+    e.preventDefault();
+    dispatch({ type: "add", data });
+  };
+  const handleRemoveClick = (e) => {
+    e.preventDefault();
+    dispatch({ type: "remove", data });
+  };
 
   return (
     <StyledLink to={`/pokemon/${id}`}>
@@ -47,7 +54,7 @@ export default function PokemonCard({ data, added }) {
         type="button"
         color={added ? "#F06292" : "#8BC34A"}
         onClick={(e) =>
-          added ? handleaddClick(e, data) : handleRemoveClick(e, data)
+          added ? handleAddClick(e, data) : handleRemoveClick(e, data)
         }
       >
         {added ? "Add" : "Del"}

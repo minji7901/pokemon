@@ -7,6 +7,8 @@ import Home from "./pages/Home.jsx";
 import Detail from "./pages/Detail.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import GlobalStyle from "./styles/GlobalStyle.js";
+import { Provider } from "react-redux";
+import store from "./reducers/store.js";
 
 const router = createBrowserRouter([
   {
@@ -27,8 +29,8 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <>
+  <Provider store={store}>
     <GlobalStyle />
     <RouterProvider router={router} />
-  </>
+  </Provider>
 );
