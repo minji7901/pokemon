@@ -20,11 +20,11 @@ const PokemonListContainer = styled.div`
 
 export default function PokemonList() {
   const dispatch = useDispatch();
+
   const handleAddClick = (e, data) => {
     e.preventDefault();
     dispatch(pokemonActions.addItem(data));
   };
-  
 
   return (
     <PokemonListContainer>

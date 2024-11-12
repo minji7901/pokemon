@@ -3,9 +3,8 @@ import pokemonSlice from "./pokemonSlice";
 
 const store = configureStore({
   reducer: {
-    selected: pokemonSlice.reducer,
+    pokemonList: pokemonSlice.reducer,
   },
 });
-
 
 export default store;

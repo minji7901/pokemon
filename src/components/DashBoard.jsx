@@ -26,21 +26,21 @@ const DashBoardIsCont = styled.div`
 `;
 
 export default function DashBoard() {
-  const { selected } = useSelector((state) => state.selected);
+  const pokemonList = useSelector((state) => state.pokemonList);
 
   const dispatch = useDispatch();
   const handleRemoveClick = (e, data) => {
     e.preventDefault();
     dispatch(pokemonActions.removeItem(data));
   };
-
+  
   return (
     <DashBoardContainer>
-      {selected.length === 0 ? (
+      {pokemonList.length === 0 ? (
         <DashBoardNonText>포켓몬을 추가해주세요!</DashBoardNonText>
       ) : (
         <DashBoardIsCont>
-          {selected.map((data) => (
+          {pokemonList.map((data) => (
             <PokemonCard
               key={data.id}
               data={data}
