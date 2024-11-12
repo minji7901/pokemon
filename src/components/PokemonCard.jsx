@@ -38,11 +38,11 @@ export default function PokemonCard({ data, added }) {
   const dispatch = useDispatch();
   const handleAddClick = (e) => {
     e.preventDefault();
-    dispatch({ type: "add", data });
+    dispatch({ type: "add", payload: data });
   };
   const handleRemoveClick = (e) => {
     e.preventDefault();
-    dispatch({ type: "remove", data });
+    dispatch({ type: "remove", payload: data });
   };
 
   return (
