@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { StyledButton } from "../styles/StyledButton";
-import { useDispatch } from "react-redux";
-import { pokemonActions } from "../redux/pokemonSlice";
 
 const StyledLink = styled(Link)`
   position: relative;
@@ -34,17 +32,13 @@ const StyledLink = styled(Link)`
     }
   }
 `;
-export default function PokemonCard({ data, added }) {
+export default function PokemonCard({
+  data,
+  added,
+  handleAddClick,
+  handleRemoveClick,
+}) {
   const { img_url, korean_name, description, id } = data;
-  const dispatch = useDispatch();
-  const handleAddClick = (e) => {
-    e.preventDefault();
-    dispatch(pokemonActions.addItem());
-  };
-  const handleRemoveClick = (e) => {
-    e.preventDefault();
-    dispatch(pokemonActions.removeItem());
-  };
 
   return (
     <StyledLink to={`/pokemon/${id}`}>
