@@ -2,6 +2,7 @@ import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 import { useSelector } from "react-redux";
 
+
 const DashBoardContainer = styled.article`
   padding: 20px;
   border-radius: 10px;

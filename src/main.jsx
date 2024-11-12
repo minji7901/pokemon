@@ -8,7 +8,7 @@ import Detail from "./pages/Detail.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import GlobalStyle from "./styles/GlobalStyle.js";
 import { Provider } from "react-redux";
-import store from "./reducers/store.js";
+import store from "./redux/store.js";
 
 const router = createBrowserRouter([
   {

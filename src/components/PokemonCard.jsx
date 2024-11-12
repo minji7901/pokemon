@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { StyledButton } from "../styles/StyledButton";
 import { useDispatch } from "react-redux";
+import { pokemonActions } from "../redux/pokemonSlice";
 
 const StyledLink = styled(Link)`
   position: relative;
@@ -38,11 +39,11 @@ export default function PokemonCard({ data, added }) {
   const dispatch = useDispatch();
   const handleAddClick = (e) => {
     e.preventDefault();
-    dispatch({ type: "add", data });
+    dispatch(pokemonActions.addItem());
   };
   const handleRemoveClick = (e) => {
     e.preventDefault();
-    dispatch({ type: "remove", data });
+    dispatch(pokemonActions.removeItem());
   };
 
   return (
