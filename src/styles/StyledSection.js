@@ -5,4 +5,9 @@ export const StyledSection = styled.section`
   margin: 0 auto;
   padding-top: 120px;
   min-height: 100vh;
+  @media (max-width: 1024px) {
+    max-width: none;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;

@@ -18,6 +18,15 @@ const HomeContainer = styled.div`
   border-radius: 15px;
   box-shadow: 0 0 20px 5px rgb(255 255 255 / 20%);
   background: rgba(0, 0, 0, 0.1);
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    width: calc(100% - 60px);
+  }
+  @media (max-width: 768px) {
+    img[alt="pikachu"] {
+      width: 100%;
+    }
+  }
 `;
 const HomeContTextBox = styled.div`
   color: #fff;
@@ -32,6 +41,9 @@ const HomeContTextBox = styled.div`
     color: #ddd;
     font-weight: 300;
     font-size: 1.25rem;
+  }
+  @media (max-width: 1024px) {
+    max-width: none;
   }
 `;
 const ballScale = keyframes`

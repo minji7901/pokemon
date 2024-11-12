@@ -10,6 +10,12 @@ const PokemonListContainer = styled.div`
   grid-template-columns: repeat(6, 1fr);
   margin-top: 20px;
   gap: 20px;
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export default function PokemonList() {
