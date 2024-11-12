@@ -28,7 +28,8 @@ function removePokemon(state, data) {
   };
 }
 
-const pokemonReducer = (state = { selected: [] }, action) => {
+const initialState = { selected: [] };
+const pokemonReducer = (state = initialState, action) => {
   switch (action.type) {
     case "add":
       return addPokemon(state, action.data);
