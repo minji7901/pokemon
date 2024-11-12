@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const DashBoardContainer = styled.article`
   padding: 20px;
@@ -20,7 +20,12 @@ const DashBoardIsCont = styled.div`
 
 export default function DashBoard() {
   const selected = useSelector((state) => state.selected);
-  
+  const dispatch = useDispatch();
+  const handleRemoveClick = (e, data) => {
+    e.preventDefault();
+    dispatch({ type: "remove", payload: data });
+  };
+
   return (
     <DashBoardContainer>
       {selected.length === 0 ? (
@@ -28,7 +33,11 @@ export default function DashBoard() {
       ) : (
         <DashBoardIsCont>
           {selected.map((data) => (
-            <PokemonCard key={data.id} data={data} />
+            <PokemonCard
+              key={data.id}
+              data={data}
+              handleRemoveClick={(e) => handleRemoveClick(e, data)}
+            />
           ))}
         </DashBoardIsCont>
       )}

@@ -33,17 +33,13 @@ const StyledLink = styled(Link)`
     }
   }
 `;
-export default function PokemonCard({ data, added }) {
+export default function PokemonCard({
+  data,
+  added,
+  handleAddClick,
+  handleRemoveClick,
+}) {
   const { img_url, korean_name, description, id } = data;
-  const dispatch = useDispatch();
-  const handleAddClick = (e) => {
-    e.preventDefault();
-    dispatch({ type: "add", payload: data });
-  };
-  const handleRemoveClick = (e) => {
-    e.preventDefault();
-    dispatch({ type: "remove", payload: data });
-  };
 
   return (
     <StyledLink to={`/pokemon/${id}`}>
