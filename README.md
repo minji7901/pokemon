@@ -1,12 +1,13 @@
 # 포켓몬 수집 사이트
 
 react + redux + router을 사용하여 포켓몬 리스트를 보여주는 사이트입니다.
+![pokemon-ezgif com-crop (1)](https://github.com/user-attachments/assets/3f376547-73b1-4bdb-a098-5b0cab0046a3)
 
 ## ✅ 기능
 
 - 반응형
-- 추가시 dashboard에 포켓몬이 추가되고, 삭제시 dashboard에서 삭제됨
-- 이미 dahsboard에 있거나 dashboard에 6개가 초과됐을시 경고문이 뜸
+- 포켓몬 추가시 dashboard에 추가되고, 삭제시 dashboard에서 삭제됨
+- 이미 포켓몬이 dahsboard에 있거나 dashboard에 6개가 초과됐을시 경고문이 뜸
 - 포켓몬 카드 클릭시 detail페이지로 이동
 - detail페이지에서 dashboard기준으로 추가됐다면 삭제버튼이, 없다면 추가버튼이 노출
 - 데이터는 로컬스토리지에 저장되어 페이지 이동, 새로고침시에도 유지
