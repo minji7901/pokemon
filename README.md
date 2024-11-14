@@ -1,5 +1,5 @@
 # 포켓몬 수집 사이트
-
+[배포](https://pokemon-vert-nine.vercel.app/) <br />
 react + redux + router을 사용하여 포켓몬 리스트를 보여주는 사이트입니다.
 ![pokemon-ezgif com-crop (1)](https://github.com/user-attachments/assets/3f376547-73b1-4bdb-a098-5b0cab0046a3)
 
